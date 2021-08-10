@@ -26,6 +26,7 @@ def add_two_nums(l1:ListNode, l2:ListNode):
         promote = int((promote + val_l1 + val_l2)/10)
 
     print(result_list)
+    # 采用了原始的init方法对链表进行赋值，本质上是对类不了解
     temp_chain = ListNode(result_list[-1])
     for item in reversed(result_list[:-1]):
         temp_chain = ListNode(item, temp_chain)
