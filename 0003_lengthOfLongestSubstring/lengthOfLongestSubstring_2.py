@@ -3,8 +3,8 @@ def lengthOfLongestSubstring(s):
     val_dict = {}
     max_len = 0
     for right, item in enumerate(s):
-        # 需要排除后面再次出现left左边的字符，如"tmmzuxt"
-        if item in val_dict : #and left < val_dict[item]:
+        # 如果出现重复值，即将left位置移动到重复值上一次出现的位置
+        if item in val_dict:
             left = val_dict[item]
             val_dict[item] = right
         else:
