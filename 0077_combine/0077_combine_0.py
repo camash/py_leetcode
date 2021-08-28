@@ -5,7 +5,7 @@ def combine(n,k):
     return result
 
 
-# begin 是树搜索的开始位置，search_list每次查找的临时结果
+# begin 是树搜索的开始位置，search_list每次查找的临时结果，result在此处为公共变量
 def backtracking(n, k, result, begin, search_list):
     if len(search_list) == k:
         result.append(search_list.copy())
@@ -20,7 +20,7 @@ def backtracking(n, k, result, begin, search_list):
 
 
 if __name__ == '__main__':
-    output = combine(4,2)
+    output = combine(4,0)
     print(output)
 
 
