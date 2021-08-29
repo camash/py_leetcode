@@ -13,7 +13,7 @@ def inorderTraversal(root: TreeNode):
     return res
 
 
-# 参照0077的方式保留了
+# 参照0077的方式利用数组变量保存遍历过程中的所有结果
 def inorder(root: TreeNode, path: list):
     if root.left is None and root.right is None:
         path.append(root.val)
