@@ -34,7 +34,7 @@ def generate_trees(start, end):
 
 
 if __name__ == "__main__":
-    output = generateTrees(3)
+    output = generateTrees(8)
     print(output)
 
 
