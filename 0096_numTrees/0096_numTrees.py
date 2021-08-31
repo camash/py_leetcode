@@ -7,7 +7,7 @@ class TreeNode:
 
 def num_trees(n):
     # G保存n个节点的BST的个数，初始值都为0
-    # 数组有记忆功能
+    # 数组有记忆功能，其实使用的是迭代法向前计算G[n]的值，过程用到G[i<n]的结果
     G = [0]*(n+1)
     G[0] = 1
     G[1] = 1
@@ -19,5 +19,5 @@ def num_trees(n):
 
 
 if __name__ == "__main__":
-    output = num_trees(3)
+    output = num_trees(2)
     print(output)
