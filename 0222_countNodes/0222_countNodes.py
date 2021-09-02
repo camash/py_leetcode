@@ -4,22 +4,44 @@ class TreeNode:
         self.left = left
         self.right = right
 
-
 def countNodes(root: TreeNode):
+    if root is None:
+        return 0
     i = 0
-    res = 0
-    # 提前赋值，避免控制的情况
-    prev = root
-    # 取最右边的层数
-    while root:
-        prev = root
-        res += pow(2,i)
+    node = root.left
+    # 取最左边的层数
+    while node:
         i += 1
-        root = root.right
-    # 退出时两种情况, 有左子节点，则多一层减去1
-    if prev.left:
-        res += pow(2,i) - 1
-    return res
+        node = node.left
+    # 完全二叉树的性质，值的范围在最后一层的左到最右之间
+    lmost_count = 2**i
+    rmost_count = 2**(i+1) - 1
+    # 二分法尽行判断
+    while lmost_count < rmost_count:
+        mid = (lmost_count + rmost_count)//2+1
+        if exists(root, mid):
+            lmost_count = mid
+        else:
+            rmost_count = mid - 1
+
+    return rmost_count
+
+
+# 判断最后一层节点是否存在
+def exists(node:TreeNode, k):
+    # 查找路径，1往右，0往左
+    path = bin(k)[3:]
+    for i in path:
+        if i == '1':
+            node = node.right
+        else:
+            node = node.left
+    if node:
+        return True
+    else:
+        return False
+
+
 
 
 if __name__ == '__main__':
