@@ -22,6 +22,6 @@ def mergeTrees(root1: TreeNode, root2: TreeNode):
 if __name__ == "__main__":
     input1 = TreeNode(1, TreeNode(2,None,TreeNode(10)), TreeNode(3))
     input2 = TreeNode(4, TreeNode(5))
-    output = mergeTree(input1, input2)
+    output = mergeTrees(input1, input2)
     print("xxx")
 
