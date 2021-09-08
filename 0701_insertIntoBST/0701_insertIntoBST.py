@@ -6,8 +6,9 @@ class TreeNode:
 
 
 def insertIntoBST(root: TreeNode, val: int):
-    if not root or not val:
-        return None
+    # 根据题意val不为空值
+    if not root:
+        return TreeNode(val)
     node = root
     direction = 'left'
     while node:
