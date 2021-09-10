@@ -45,6 +45,15 @@ def romanToInt(s: str):
                 s = s[:-1]
         else:
             res += 1
+            s = s[:-1]
+
+    return res
+
+
+if __name__ == "__main__":
+    input = 'III'
+    output = romanToInt(input)
+    print(output)
 
 
 
