@@ -51,7 +51,7 @@ def romanToInt(s: str):
 
 
 if __name__ == "__main__":
-    input = 'LVIII'
+    input = 'IV'
     output = romanToInt(input)
     print(output)
 
