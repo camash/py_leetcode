@@ -1,4 +1,3 @@
-import math
 def trailingZeroes(n: int):
     add_zeroes = 0
     while n>0:
