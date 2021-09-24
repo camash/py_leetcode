@@ -16,9 +16,14 @@ def combinationSum2(candidates: list, target:int):
             cur.pop()
 
     ans = []
-    candidates.sort()
-    dfs(candidates, 0, target, [], ans)
-    return ans
+    if sum(candidates) < target:
+        return ans
+    elif sum(candidates) == target:
+        return ans.append(candidates)
+    else:
+        candidates.sort()
+        dfs(candidates, 0, target, [], ans)
+        return ans
 
 
 if __name__ == '__main__':
