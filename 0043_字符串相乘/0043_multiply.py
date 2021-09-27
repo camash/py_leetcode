@@ -1,4 +1,6 @@
 def multiply(num1: str, num2: str):
+    if num1 == "0" or num2 == "0":
+        return "0"
     full_res = ""
     num1 = num1[::-1]
     num2 = num2[::-1]
@@ -11,10 +13,13 @@ def multiply(num1: str, num2: str):
         for j in range(len(num2)):
             promo, curr = divmod(int(num1[i]) * int(num2[j]) + promo, 10)
             curr_str = str(curr) + curr_str
+        # 按位置补0
+        curr_str = curr_str + "0"*i
+        # 有进位要加入
         if promo > 0:
             curr_str = str(promo) + curr_str
-        full_res = add_two_strings((curr_str + "0"*i), full_res)
-
+        print(full_res)
+        full_res = add_two_strings(curr_str, full_res)
 
     return full_res
 
@@ -38,17 +43,18 @@ def add_two_strings(str1: str, str2: str):
                 promo, curr = divmod(int(str1[i]) + promo, 10)
             # 当前位拼装
             res = str(curr) + res
-            if promo > 0:
-                res = str(promo) + res
+        # 最终还有进位，加上
+        if promo > 0:
+            res = str(promo) + res
     return res
 
 
 
 if __name__ == "__main__":
-    input1 = "123"
-    input2 = "56"
-    #output = add_two_strings(input1, input2)
-    output = multiply(input1, input2)
+    input1 = "10488"
+    input2 = "45600"
+    output = add_two_strings(input1, input2)
+    #output = multiply(input1, input2)
     print(output)
 
 
