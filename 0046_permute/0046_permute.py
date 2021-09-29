@@ -13,14 +13,12 @@ def permute(nums: list):
             dfs(nums, n, cur, ans)
             # 回溯
             cur.pop()
-
-
     ans = []
     dfs(nums, len(nums), [], ans)
     return ans
 
 
 if __name__ == "__main__":
-    input = [1]
+    input = [1,2,3]
     output = permute(input)
     print(output)
