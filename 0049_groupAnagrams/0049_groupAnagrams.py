@@ -7,11 +7,7 @@ def groupAnagrams(strs: list):
         else:
             strs_dict[sorted_item] = [item]
 
-    res = []
-    for k, v in strs_dict.items():
-        res.append(v)
-
-    return res
+    return list(strs_dict.values())
 
 
 if __name__ == '__main__':
